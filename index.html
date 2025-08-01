@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestor de Tareas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            naranja: '#f97316',
+            grisOscuro: '#1f2937',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="bg-gray-700 dark:bg-grisOscuro text-black dark:text-white transition-colors duration-300">
+  <div class="max-w-md mx-auto mt-10 p-6 rounded shadow-md bg-white dark:bg-gray-800">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-2xl font-bold text-blue-600 dark:text-orange-400">📝 Lista de Tareas</h1>
+      <button id="toggleDark" class="text-xl">🌙</button>
+    </div>
+
+    <div class="flex mb-4">
+      <input
+        id="taskInput"
+        type="text"
+        placeholder="Escribe una tarea..."
+        class="flex-grow p-2 border rounded-l focus:outline-none dark:bg-gray-700 dark:text-white"
+      />
+      <button
+        id="addBtn"
+        class="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
+      >
+        Agregar
+      </button>
+    </div>
+
+    <ul id="taskList" class="space-y-2"></ul>
+  </div>
+
+  <!-- 🔗 Enlace al archivo JS externo -->
+  <script src="app.js"></script>
+</body>
+</html>
